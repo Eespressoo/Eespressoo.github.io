@@ -112,8 +112,46 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
         </button>
-    </div>
 </section>
+
+    </div>
+    <section id="galeria-autos" class="container my-5">
+        <h2 class="text-center mb-4">Galería de Autos y Videos</h2>
+  
+    <div class="galeria-grid">
+        <!-- Imágenes -->
+        <div class="galeria-item">
+            <img src="taxi4.jpg" alt="Taxi 4" loading="lazy">
+        </div>
+        <div class="galeria-item">
+            <img src="taxi5.jpg" alt="Taxi 5" loading="lazy">
+        </div>
+        <div class="galeria-item">
+            <img src="taxi6.jpg" alt="Taxi 6" loading="lazy">
+        </div>
+
+        <!-- Videos -->
+        <div class="galeria-item video-item">
+        <video controls>
+            <source src="taxi-video1.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        </div>
+        <div class="galeria-item video-item">
+        </div>
+                <!-- Lightbox Overlay -->
+        <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-media" id="lightbox-media" src="" alt="">
+        <video class="lightbox-video" id="lightbox-video" controls style="display:none;">
+            <source id="lightbox-video-source" src="" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        </div>
+    </div>
+    </section>
+</section>
+
 
         
 
