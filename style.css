@@ -1,0 +1,314 @@
+/* style.css */
+
+/* --- Variables CSS (Opcional, pero útil para mantener la consistencia) --- */
+
+:root {
+    --color-primario: #fbff27; /* Un azul vibrante, representativo de seriedad/confianza */
+    --color-secundario: #000000; /* Gris para textos secundarios */
+    --color-fondo-claro: #ffffff; /* Fondo muy claro */
+    --color-fondo-oscuro: #343a40; /* Fondo oscuro para el footer */
+    --color-texto-oscuro: #212529; /* Color de texto principal */
+    --color-texto-claro: #ffffff; /* Color de texto para fondos oscuros */
+    --sombra-suave: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para elementos destacados */
+    --sombra-media: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra un poco más pronunciada */
+}
+
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+}
+
+/* Las clases 'container' y 'my-5' ahora vienen de Bootstrap,
+   pero puedes añadir padding si lo necesitas para un control más fino */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* --- Encabezado (Header) --- */
+header {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --- Contenido Principal (Main) --- */
+main {
+    /* Eliminamos el padding y box-shadow del main para que las secciones se extiendan
+       y cada sección maneje su propio estilo y espaciado de Bootstrap */
+    padding: 0;
+    margin: 0;
+    background-color: transparent; /* Permite que el color de fondo del body se vea */
+    box-shadow: none;
+}
+
+/* Estilos para todas las secciones principales (contacto, autos, info) */
+section {
+    background-color: var(--color-texto-claro); /* Fondo blanco para el contenido */
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave);
+    padding: 30px; /* Un poco más de padding interno */
+    margin-bottom: 30px; /* Espacio entre secciones */
+}
+
+/* Ajuste para que las secciones se separen del header y footer */
+section:first-of-type {
+    margin-top: 30px;
+}
+section:last-of-type {
+    margin-bottom: 30px;
+}
+
+
+section h2 {
+    color: var(--color-primario);
+    font-size: 2.2em; /* Ligeramente más grande */
+    margin-bottom: 20px; /* Más espacio debajo del título */
+    border-bottom: 2px solid var(--color-primario);
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* Alineación de títulos de sección si están centrados (como "Nuestros Autos") */
+.text-center {
+    display: block; /* Asegura que h2 con text-center tome todo el ancho */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* --- Sección de Contacto (Clases de Bootstrap 'datos-contacto' y 'dato' no cambian) --- */
+.datos-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.dato {
+    background-color: var(--color-fondo-claro);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 calc(50% - 25px);
+    min-width: 280px;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dato:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.dato img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.dato span {
+    display: block;
+    font-weight: bold;
+    color: var(--color-secundario);
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.dato a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.dato a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* --- Sección del Carrusel (Nuestros Autos) --- */
+#nuestros-autos .carousel {
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que las imágenes y controles no se salgan del borde redondeado */
+    box-shadow: var(--sombra-media); /* Una sombra más notoria para el carrusel */
+}
+
+#nuestros-autos .carousel-item img {
+    height: 450px; /* Altura fija para todas las imágenes del carrusel */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    filter: brightness(80%); /* Oscurece un poco la imagen para que el texto de la leyenda se vea mejor */
+}
+
+/* Estilos para el texto de la leyenda del carrusel */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para la leyenda */
+    border-radius: 5px;
+    padding: 10px 15px;
+    /* Ajusta la posición si es necesario */
+    bottom: 20px; /* Más arriba del borde inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%; /* Para que no ocupe todo el ancho en pantallas grandes */
+}
+
+.carousel-caption h5 {
+    color: var(--color-texto-claro);
+    font-size: 1.6em;
+    margin-bottom: 5px;
+}
+
+.carousel-caption p {
+    color: var(--color-texto-claro);
+    font-size: 1.1em;
+    margin-bottom: 0;
+}
+
+/* Estilos para los indicadores y controles de navegación del carrusel */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--color-primario); /* Color de tus puntos de navegación */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para los íconos de flecha */
+    border-radius: 50%; /* Los hace circulares */
+    padding: 15px; /* Tamaño del círculo */
+}
+
+
+/* --- Información Adicional --- */
+#informacion-adicional ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+#informacion-adicional li {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* --- Adaptabilidad (Responsive Design) --- */
+@media (max-width: 992px) { /* Tablets y pantallas más pequeñas */
+    #nuestros-autos .carousel-item img {
+        height: 350px; /* Reduce la altura del carrusel */
+    }
+    .carousel-caption h5 {
+        font-size: 1.4em;
+    }
+    .carousel-caption p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    main {
+        margin: 0; /* Bootstrap ya maneja el margen con 'container' y 'my-5' */
+    }
+
+    section {
+        padding: 20px; /* Menos padding interno */
+        margin-left: 15px; /* Alinea con los bordes de la pantalla */
+        margin-right: 15px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    .datos-contacto {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dato {
+        flex: 1 1 90%;
+        max-width: 350px;
+    }
+
+    #nuestros-autos .carousel-item img {
+        height: 300px; /* Más pequeña para móviles */
+    }
+
+    .carousel-caption {
+        position: static; /* No fijo para que el texto fluya con la imagen */
+        transform: none;
+        background-color: rgba(0, 0, 0, 0.6); /* Mantén el fondo semi-transparente */
+        margin-top: -5px; /* Un pequeño ajuste para que se vea pegado a la imagen */
+    }
+    .carousel-caption h5 {
+        font-size: 1.2em;
+    }
+    .carousel-caption p {
+        font-size: 0.9em;
+    }
+
+    /* Ocultar el texto de la leyenda en pantallas muy pequeñas si es necesario */
+    .carousel-caption.d-none.d-md-block {
+        display: block !important; /* Muestra siempre en móviles con este override */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+        padding: 0 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 1.6em;
+    }
+
+    .dato img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .dato span, .dato a {
+        font-size: 1em;
+    }
+
+    #nuestros-autos .carousel-item img {
+        height: 250px;
+    }
+}
