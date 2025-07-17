@@ -330,3 +330,100 @@ footer {
         -1px  1px 0 var(--color-secundario),
          1px  1px 0 var(--color-secundario);
 }
+
+/* Galería Autos y Videos */
+
+#galeria-autos h2 {
+  color: var(--color-primario);
+  border-bottom: 2px solid var(--color-primario);
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.galeria-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  background-color: var(--color-fondo-claro);
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover {
+  transform: scale(1.05);
+  box-shadow: var(--sombra-media);
+}
+
+.galeria-item img,
+.galeria-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Para los videos, puedes definir una altura fija si quieres */
+.video-item video {
+  max-height: 200px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lightbox */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  cursor: pointer;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.lightbox img,
+.lightbox video {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1060;
+  transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+  color: #bbb;
+}
+
+        -1px -1px 0 var(--color-secundario),
+         1px -1px 0 var(--color-secundario),
+        -1px  1px 0 var(--color-secundario),
+         1px  1px 0 var(--color-secundario);
+}
