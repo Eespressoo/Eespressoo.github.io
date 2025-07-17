@@ -3,7 +3,7 @@
 /* --- Variables CSS (Opcional, pero útil para mantener la consistencia) --- */
 
 :root {
-    --color-primario: #fbff27; /* Un azul vibrante, representativo de seriedad/confianza */
+    --color-primario: #2633ff; /* Un azul vibrante, representativo de seriedad/confianza */
     --color-secundario: #1d1d1d; /* Gris para textos secundarios */
     --color-fondo-claro: #ffffff; /* Fondo muy claro */
     --color-fondo-oscuro: #343a40; /* Fondo oscuro para el footer */
