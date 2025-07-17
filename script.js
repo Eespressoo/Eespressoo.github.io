@@ -101,3 +101,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxMediaImg = document.getElementById('lightbox-media');
+  const lightboxVideo = document.getElementById('lightbox-video');
+  const lightboxVideoSource = document.getElementById('lightbox-video-source');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  // Selecciona todos los elementos de la galería que pueden abrir el lightbox
+  const galleryItems = document.querySelectorAll('#galeria-autos .galeria-item img, #galeria-autos .galeria-item video');
+
+  galleryItems.forEach(item => {
+    item.style.cursor = 'pointer'; // Cambia el cursor para indicar que es clickeable
+
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+
+      if(item.tagName.toLowerCase() === 'img') {
+        lightboxVideo.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxMediaImg.style.display = 'block';
+        lightboxMediaImg.src = item.src;
+        lightboxMediaImg.alt = item.alt || '';
+      } else if(item.tagName.toLowerCase() === 'video') {
+        lightboxMediaImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideoSource.src = item.querySelector('source').src;
+        lightboxVideo.load();
+      }
+
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  // Cierra el lightbox cuando se hace clic en el fondo o en la X
+  lightbox.addEventListener('click', function() {
+    lightbox.style.display = 'none';
+    if(!lightboxVideo.paused) {
+      lightboxVideo.pause();
+    }
+  });
+
+  lightboxClose.addEventListener('click', function(e) {
+    e.stopPropagation(); // Evita que cierre dos veces
+    lightbox.style.display = 'none';
+    if(!lightboxVideo.paused) {
+      lightboxVideo.pause();
+    }
+  });
+});
