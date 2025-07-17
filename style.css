@@ -4,7 +4,7 @@
 
 :root {
     --color-primario: #fbff27; /* Un azul vibrante, representativo de seriedad/confianza */
-    --color-secundario: #000000; /* Gris para textos secundarios */
+    --color-secundario: #1d1d1d; /* Gris para textos secundarios */
     --color-fondo-claro: #ffffff; /* Fondo muy claro */
     --color-fondo-oscuro: #343a40; /* Fondo oscuro para el footer */
     --color-texto-oscuro: #212529; /* Color de texto principal */
@@ -311,4 +311,22 @@ footer {
     #nuestros-autos .carousel-item img {
         height: 250px;
     }
+}
+
+footer {
+    color: var(--color-primario);
+    text-shadow:
+        -1px -1px 0 var(--color-secundario),
+         1px -1px 0 var(--color-secundario),
+        -1px  1px 0 var(--color-secundario),
+         1px  1px 0 var(--color-secundario);
+}
+
+.texto-amarillo {
+    color: var(--color-primario);
+    text-shadow:
+        -1px -1px 0 var(--color-secundario),
+         1px -1px 0 var(--color-secundario),
+        -1px  1px 0 var(--color-secundario),
+         1px  1px 0 var(--color-secundario);
 }
