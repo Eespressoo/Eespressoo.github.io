@@ -314,22 +314,10 @@ footer {
 }
 
 footer {
-    color: var(--color-primario);
-    text-shadow:
-        -1px -1px 0 var(--color-secundario),
-         1px -1px 0 var(--color-secundario),
-        -1px  1px 0 var(--color-secundario),
-         1px  1px 0 var(--color-secundario);
+    color: gold;
 }
 
-.texto-amarillo {
-    color: var(--color-primario);
-    text-shadow:
-        -1px -1px 0 var(--color-secundario),
-         1px -1px 0 var(--color-secundario),
-        -1px  1px 0 var(--color-secundario),
-         1px  1px 0 var(--color-secundario);
-}
+
 
 /* Galería Autos y Videos */
 
